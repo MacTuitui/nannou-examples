@@ -1,0 +1,10 @@
+[package]
+name = "nannou-examples"
+version = "0.1.0"
+edition = "2021"
+authors = ["Alexis Andre <mactuitui+github@gmail.com>"]
+resolver = "2"
+
+[dependencies]
+nannou = { version="0.18", features = ["spirv"]}
+rand_xorshift = "0.3"
