@@ -7,4 +7,16 @@ resolver = "2"
 
 [dependencies]
 nannou = { version="0.18", features = ["spirv"]}
+nannou_audio = "0.18"
 rand_xorshift = "0.3"
+rustfft = "6.0"
+ringbuf = "0.2"
+
+
+[[example]]
+name = "advance-wgpu"
+path = "examples/wgpu.rs"
+[[example]]
+name = "fft"
+path = "examples/fft.rs"
+

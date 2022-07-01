@@ -260,9 +260,9 @@ fn model(app: &App) -> Model {
     let pipeline_layout = create_pipeline_layout(device, &bind_group_layout);
     //we are using instance rendering here!
     let vs_mod_instance =
-        shader_from_spirv(&device, Path::new("src/shaders/basic_instance.vert.spv"));
+        shader_from_spirv(&device, Path::new("assets/shaders/basic_instance.vert.spv"));
     let fs_mod_instance =
-        shader_from_spirv(&device, Path::new("src/shaders/basic_instance.frag.spv"));
+        shader_from_spirv(&device, Path::new("assets/shaders/basic_instance.frag.spv"));
     //we make the instance pipeline here
     let render_pipeline = create_render_pipeline_instance(
         device,
@@ -305,8 +305,8 @@ fn model(app: &App) -> Model {
     //how to render that texture
 
     //the shaders are very simple here
-    let vs_mod_texture = shader_from_spirv(&device, Path::new("src/shaders/tex-simple.vert.spv"));
-    let fs_mod_texture = shader_from_spirv(&device, Path::new("src/shaders/tex-simple.frag.spv"));
+    let vs_mod_texture = shader_from_spirv(&device, Path::new("assets/shaders/tex-simple.vert.spv"));
+    let fs_mod_texture = shader_from_spirv(&device, Path::new("assets/shaders/tex-simple.frag.spv"));
 
     let sampler_desc = wgpu::SamplerBuilder::new().into_descriptor();
     let sampler_filtering = wgpu::sampler_filtering(&sampler_desc);
@@ -396,9 +396,9 @@ fn model(app: &App) -> Model {
 
     //the blur vertex is the same
     let vs_mod_texture_blur =
-        shader_from_spirv(&device, Path::new("src/shaders/tex-simple.vert.spv"));
+        shader_from_spirv(&device, Path::new("assets/shaders/tex-simple.vert.spv"));
     let fs_mod_texture_blur =
-        shader_from_spirv(&device, Path::new("src/shaders/tex-blur.frag.spv"));
+        shader_from_spirv(&device, Path::new("assets/shaders/tex-blur.frag.spv"));
     //the blur render pipeline is very similar, the only change is the addition
     //of a uniform buffer in the layout
     let pipeline_layout_blur = device.create_pipeline_layout(&desc_texture_blur);
